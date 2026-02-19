@@ -1,6 +1,6 @@
 <img src="Graphics/android.png" width="100%" style="width:100%">
 
-# VoiceIt 3 Android SDK [![travisstatus](https://travis-ci.com/voiceittech/VoiceIt3-AndroidSDK.svg?branch=master)](https://travis-ci.com/github/voiceittech/VoiceIt3-AndroidSDK) ![jitpack](https://jitpack.io/v/voiceittech/VoiceIt3-AndroidSDK.svg) ![MIT](https://img.shields.io/github/license/mashape/apistatus.svg)
+# VoiceIt 3 Android SDK [![CI](https://github.com/voiceittech/VoiceIt3-AndroidSDK/actions/workflows/ci.yml/badge.svg)](https://github.com/voiceittech/VoiceIt3-AndroidSDK/actions/workflows/ci.yml) ![jitpack](https://jitpack.io/v/voiceittech/VoiceIt3-AndroidSDK.svg) ![MIT](https://img.shields.io/github/license/mashape/apistatus.svg)
 
 A fully comprehensive SDK that gives you access to VoiceIt's API 3.0 featuring Voice + Face Verification and Identification right in your Android app.
 
