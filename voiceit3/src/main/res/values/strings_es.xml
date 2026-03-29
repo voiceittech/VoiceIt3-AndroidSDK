@@ -24,9 +24,6 @@
     <string name="ES_TURN_RIGHT">Gire la cara a la derecha y luego retroceda hacia adelante.</string>
     <string name="ES_TURN_LEFT">Gire la cara a la izquierda y luego retroceda hacia adelante.</string>
     <string name="ES_SMILE">Por favor sonríe</string>
-    <string name="ES_FAILED_LIVENESS">Detección de vitalidad fallida</string>
-    <string name="ES_FAILED_LIVENESS_CHALLENGE">Desafío de vivacidad fallido. Vuelve a intentarlo.</string>
-    <string name="ES_FAILED_PRECHECK">Desafío de vida fallido: espere a que se le solicite antes de tomar medidas.</string>
     <string name="ES_MOVE_CLOSER">Acércate a la cámara.</string>
 
     <string name="ES_FNFD">Lo siento, no pudimos ver tu cara. Inténtalo de nuevo.</string>

@@ -7,6 +7,5 @@
     <color name="portraitBackgroundLowLight">#FFFFFF</color>
     <color name="instructionalTextLowLight">#000000</color>
     <color name="success">#379c15</color>
-    <color name="pendingLivenessSuccess">#94da7d</color>
     <color name="failure">#d70b23</color>
 </resources>

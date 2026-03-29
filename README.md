@@ -188,7 +188,6 @@ Verify user with given userId(begins with 'usr_'), contentLanguage('en-US','es-E
 ```java
 myVoiceIt.encapsulatedVideoVerification(Activity, "USER_ID_HERE", "CONTENT_LANGUAGE_HERE", "PHRASE_HERE", true, new JsonHttpResponseHandler() {...});
 ```
-With optional boolean to enable or disable liveness tutorial: 
 
 ```java
 myVoiceIt.encapsulatedVideoVerification(Activity, "USER_ID_HERE", "CONTENT_LANGUAGE_HERE", "PHRASE_HERE", true, true, new JsonHttpResponseHandler() {...});
