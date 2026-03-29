@@ -27,7 +27,7 @@ A fully comprehensive SDK that gives you access to VoiceIt's API 3.0 featuring V
 The following show Voice Verification, Face Verification, and Video Verification, respectively.
 
 <div style="background: #000 !important;">
-  <img width="290px" src="./Graphics/voiceVerification.gif" style="display: inline-block !important"/><img width="290px" src="./Graphics/faceVerification.gif" style="display: inline-block !important;"/><img width="290px" src="./Graphics/videoVerification.gif" style="display: inline-block !important;"/>
+  <img width="290px" src="./Graphics/voiceVerification.png" style="display: inline-block !important"/><img width="290px" src="./Graphics/faceVerification.png" style="display: inline-block !important;"/><img width="290px" src="./Graphics/videoVerification.png" style="display: inline-block !important;"/>
 </div>
 
 ## Getting Started
