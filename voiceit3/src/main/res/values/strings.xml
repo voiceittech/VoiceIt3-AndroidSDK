@@ -20,11 +20,6 @@
     <string name="IDENTIFY_SUCCESS">You have been successfully identified!</string>
     <string name="IDENTIFY_FAIL">Identification unsuccessful</string>
     <string name="TOO_MANY_ATTEMPTS">Too many attempts were made. Please try again later.</string>
-    <string name="BLINK_1_TIME">Please blink 1 more time</string>
-    <string name="BLINK_2_TIME">Please blink 2 times</string>
-    <string name="TURN_RIGHT">Please turn your face right, then back forward.</string>
-    <string name="TURN_LEFT">Please turn your face left, then back forward</string>
-    <string name="SMILE">Please smile</string>
     <string name="MOVE_CLOSER">Please move closer to the camera</string>
 
     <string name="FNFD">Sorry, we couldn\'t quite see your face. Please try again.</string>

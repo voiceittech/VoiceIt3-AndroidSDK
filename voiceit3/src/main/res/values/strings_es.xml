@@ -19,11 +19,6 @@
     <string name="ES_IDENTIFY_SUCCESS">¡Has sido identificado con éxito!</string>
     <string name="ES_IDENTIFY_FAIL">Identificación fallida</string>
     <string name="ES_TOO_MANY_ATTEMPTS">Se hicieron demasiados intentos. Por favor, inténtelo de nuevo más tarde.</string>
-    <string name="ES_BLINK_1_TIME">Parpadea 1 vez más</string>
-    <string name="ES_BLINK_2_TIME">Parpadea 2 veces</string>
-    <string name="ES_TURN_RIGHT">Gire la cara a la derecha y luego retroceda hacia adelante.</string>
-    <string name="ES_TURN_LEFT">Gire la cara a la izquierda y luego retroceda hacia adelante.</string>
-    <string name="ES_SMILE">Por favor sonríe</string>
     <string name="ES_MOVE_CLOSER">Acércate a la cámara.</string>
 
     <string name="ES_FNFD">Lo siento, no pudimos ver tu cara. Inténtalo de nuevo.</string>
