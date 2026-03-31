@@ -57,8 +57,6 @@
 
     <string name="ES_CHECK_INTERNET">No se puede contactar con el servidor \n Verifique su conexión a Internet</string>
 
-    <!-- <string name="ES_GRANT_WRITE_PERMISSON">"Grant permission for screen brightness"</string> -->
-
     <string name="ES_CONTINUE">Continuar</string>
 
 </resources>
