@@ -1,4 +1,4 @@
-<img src="Graphics/android.png" width="100%" style="width:100%">
+<img src="./Graphics/android.png" width="100%" style="width:100%">
 
 [![Build](https://github.com/voiceittech/voiceit3-androidsdk/actions/workflows/test.yml/badge.svg)](https://github.com/voiceittech/voiceit3-androidsdk/actions/workflows/test.yml)
 [![Dependabot](https://img.shields.io/github/issues-pr/voiceittech/voiceit3-androidsdk/dependencies?label=dependabot&logo=dependabot&color=025e8c)](https://github.com/voiceittech/voiceit3-androidsdk/pulls?q=is%3Apr+label%3Adependencies)
@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
 }
 ```
 
-### API calls
+### API Calls
 
 For each API call, a JsonHttpResponseHandler is needed to receive the result of the call. You can override the response handlers like so, and abbreviated with ellipses below:
 ```java
@@ -237,10 +237,6 @@ If you find this SDK useful, please consider giving it a star on GitHub — it h
 
 [![GitHub stars](https://img.shields.io/github/stars/voiceittech/voiceit3-androidsdk?style=social)](https://github.com/voiceittech/voiceit3-androidsdk/stargazers)
 
-## Author
-
-VoiceIt Technologies, <a href="mailto:support@voiceit.tech" target="_blank">support@voiceit.tech</a>
-
 ## License
 
-VoiceItApi3AndroidSDK is available under the MIT license. See the LICENSE file for more info.
+voiceit3-androidsdk is available under the MIT license. See the LICENSE file for more info.
