@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F5F5"
+    android:background="@color/background"
     android:fillViewport="true">
 
     <LinearLayout
@@ -14,12 +14,13 @@
 
         <!-- Header -->
         <ImageView
-            android:layout_width="64dp"
-            android:layout_height="64dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_gravity="center"
-            android:layout_marginTop="16dp"
-            android:src="@android:drawable/ic_lock_lock"
-            app:tint="#FBC132" />
+            android:layout_marginTop="8dp"
+            android:src="@android:drawable/ic_lock_idle_lock"
+            android:contentDescription="Lock icon"
+            app:tint="@color/colorPrimary" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -29,23 +30,26 @@
             android:text="VoiceIt API 3.0"
             android:textSize="26sp"
             android:textStyle="bold"
-            android:textColor="#212B36" />
+            android:textColor="@color/textPrimary" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginTop="4dp"
             android:layout_marginBottom="24dp"
             android:text="Biometric Verification Demo"
             android:textSize="14sp"
-            android:textColor="#919EAB" />
+            android:textColor="@color/textSecondary" />
 
         <!-- Credentials -->
         <com.google.android.material.textfield.TextInputLayout
+            style="@style/InputField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            app:startIconDrawable="@android:drawable/ic_dialog_info">
+            android:layout_marginBottom="12dp"
+            app:startIconDrawable="@android:drawable/ic_dialog_info"
+            app:startIconTint="@color/colorPrimary">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/apiKeyInput"
@@ -53,14 +57,17 @@
                 android:layout_height="wrap_content"
                 android:hint="API Key"
                 android:inputType="text"
+                android:textColor="@color/textPrimary"
                 android:textSize="14sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            style="@style/InputField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            app:startIconDrawable="@android:drawable/ic_lock_lock">
+            android:layout_marginBottom="12dp"
+            app:startIconDrawable="@android:drawable/ic_lock_idle_lock"
+            app:startIconTint="@color/colorPrimary">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/apiTokenInput"
@@ -68,14 +75,17 @@
                 android:layout_height="wrap_content"
                 android:hint="API Token"
                 android:inputType="textPassword"
+                android:textColor="@color/textPrimary"
                 android:textSize="14sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            style="@style/InputField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            app:startIconDrawable="@android:drawable/ic_menu_myplaces">
+            android:layout_marginBottom="12dp"
+            app:startIconDrawable="@android:drawable/ic_menu_myplaces"
+            app:startIconTint="@color/colorPrimary">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/userIdInput"
@@ -83,6 +93,7 @@
                 android:layout_height="wrap_content"
                 android:hint="User ID"
                 android:inputType="text"
+                android:textColor="@color/textPrimary"
                 android:textSize="14sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -93,6 +104,7 @@
             android:orientation="horizontal">
 
             <com.google.android.material.textfield.TextInputLayout
+                style="@style/InputField"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -104,22 +116,25 @@
                     android:layout_height="wrap_content"
                     android:hint="Phrase"
                     android:text="never forget tomorrow is a new day"
+                    android:textColor="@color/textPrimary"
                     android:textSize="14sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <Spinner
                 android:id="@+id/languageSpinner"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="44dp"
                 android:layout_gravity="center_vertical"
-                android:minWidth="100dp" />
+                android:background="@color/inputBackground"
+                android:minWidth="100dp"
+                android:popupBackground="@color/surfaceDark" />
         </LinearLayout>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginBottom="16dp"
-            android:background="#DFE3E8" />
+            android:background="@color/divider" />
 
         <!-- Enrollment Section -->
         <TextView
@@ -129,7 +144,7 @@
             android:text="Enrollment"
             android:textSize="13sp"
             android:textStyle="bold"
-            android:textColor="#919EAB" />
+            android:textColor="@color/textSecondary" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/voiceEnrollBtn"
@@ -139,10 +154,11 @@
             android:text="Voice Enrollment"
             android:textAllCaps="false"
             android:textSize="15sp"
-            app:backgroundTint="#505050"
+            app:backgroundTint="@color/enrollmentButton"
             app:cornerRadius="12dp"
             app:icon="@android:drawable/ic_btn_speak_now"
-            app:iconGravity="start" />
+            app:iconGravity="start"
+            app:iconTint="@color/textPrimary" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/faceEnrollBtn"
@@ -152,23 +168,25 @@
             android:text="Face Enrollment"
             android:textAllCaps="false"
             android:textSize="15sp"
-            app:backgroundTint="#505050"
+            app:backgroundTint="@color/enrollmentButton"
             app:cornerRadius="12dp"
             app:icon="@android:drawable/ic_menu_camera"
-            app:iconGravity="start" />
+            app:iconGravity="start"
+            app:iconTint="@color/textPrimary" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/videoEnrollBtn"
             android:layout_width="match_parent"
             android:layout_height="52dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginBottom="20dp"
             android:text="Video Enrollment"
             android:textAllCaps="false"
             android:textSize="15sp"
-            app:backgroundTint="#505050"
+            app:backgroundTint="@color/enrollmentButton"
             app:cornerRadius="12dp"
             app:icon="@android:drawable/ic_media_play"
-            app:iconGravity="start" />
+            app:iconGravity="start"
+            app:iconTint="@color/textPrimary" />
 
         <!-- Verification Section -->
         <TextView
@@ -178,7 +196,7 @@
             android:text="Verification"
             android:textSize="13sp"
             android:textStyle="bold"
-            android:textColor="#919EAB" />
+            android:textColor="@color/textSecondary" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/voiceVerifyBtn"
@@ -188,10 +206,11 @@
             android:text="Voice Verification"
             android:textAllCaps="false"
             android:textSize="15sp"
-            app:backgroundTint="#FBC132"
+            app:backgroundTint="@color/verificationButton"
             app:cornerRadius="12dp"
             app:icon="@android:drawable/ic_btn_speak_now"
-            app:iconGravity="start" />
+            app:iconGravity="start"
+            app:iconTint="@color/textPrimary" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/faceVerifyBtn"
@@ -201,10 +220,11 @@
             android:text="Face Verification"
             android:textAllCaps="false"
             android:textSize="15sp"
-            app:backgroundTint="#FBC132"
+            app:backgroundTint="@color/verificationButton"
             app:cornerRadius="12dp"
             app:icon="@android:drawable/ic_menu_camera"
-            app:iconGravity="start" />
+            app:iconGravity="start"
+            app:iconTint="@color/textPrimary" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/videoVerifyBtn"
@@ -214,10 +234,11 @@
             android:text="Video Verification"
             android:textAllCaps="false"
             android:textSize="15sp"
-            app:backgroundTint="#FBC132"
+            app:backgroundTint="@color/verificationButton"
             app:cornerRadius="12dp"
             app:icon="@android:drawable/ic_media_play"
-            app:iconGravity="start" />
+            app:iconGravity="start"
+            app:iconTint="@color/textPrimary" />
 
     </LinearLayout>
 </ScrollView>

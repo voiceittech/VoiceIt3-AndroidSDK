@@ -3,4 +3,13 @@
     <color name="colorPrimary">#FBC132</color>
     <color name="colorPrimaryDark">#212B36</color>
     <color name="colorAccent">#FBC132</color>
+
+    <color name="background">#212B36</color>
+    <color name="surfaceDark">#2C3544</color>
+    <color name="enrollmentButton">#505050</color>
+    <color name="verificationButton">#FBC132</color>
+    <color name="textPrimary">#FFFFFF</color>
+    <color name="textSecondary">#919EAB</color>
+    <color name="inputBackground">#38424F</color>
+    <color name="divider">#38424F</color>
 </resources>
