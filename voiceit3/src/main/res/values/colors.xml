@@ -2,10 +2,10 @@
 <resources>
     <color name="waveform">#fbc132</color>
     <color name="progressCircle">#fbc132</color>
-    <color name="portraitBackground">#FFFFFF</color>
-    <color name="instructionalText">#000000</color>
-    <color name="portraitBackgroundLowLight">#FFFFFF</color>
-    <color name="instructionalTextLowLight">#000000</color>
+    <color name="portraitBackground">#000000</color>
+    <color name="instructionalText">#FFFFFF</color>
+    <color name="portraitBackgroundLowLight">#000000</color>
+    <color name="instructionalTextLowLight">#FFFFFF</color>
     <color name="success">#379c15</color>
     <color name="failure">#d70b23</color>
 </resources>
