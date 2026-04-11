@@ -97,21 +97,30 @@
                 android:textSize="14sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:text="Phrase"
+            android:textColor="@color/textSecondary"
+            android:textSize="12sp" />
+
         <com.google.android.material.textfield.TextInputLayout
             style="@style/InputField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp">
+            android:layout_marginBottom="12dp"
+            app:hintEnabled="false">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/phraseInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Phrase"
                 android:text="never forget tomorrow is a new day"
                 android:textColor="@color/textPrimary"
                 android:textSize="14sp"
-                android:singleLine="true" />
+                android:singleLine="true"
+                android:gravity="start" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Spinner
