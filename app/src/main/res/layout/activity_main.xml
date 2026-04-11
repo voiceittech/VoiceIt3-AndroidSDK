@@ -97,39 +97,31 @@
                 android:textSize="14sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <LinearLayout
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/InputField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:orientation="horizontal">
+            android:layout_marginBottom="12dp">
 
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/InputField"
-                android:layout_width="0dp"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/phraseInput"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginEnd="8dp">
+                android:hint="Phrase"
+                android:text="never forget tomorrow is a new day"
+                android:textColor="@color/textPrimary"
+                android:textSize="14sp"
+                android:singleLine="true" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/phraseInput"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Phrase"
-                    android:text="never forget tomorrow is a new day"
-                    android:textColor="@color/textPrimary"
-                    android:textSize="14sp"
-                    android:singleLine="true"
-                    android:gravity="start" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <Spinner
-                android:id="@+id/languageSpinner"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:background="@color/inputBackground"
-                android:minWidth="100dp"
-                android:popupBackground="@color/surfaceDark" />
-        </LinearLayout>
+        <Spinner
+            android:id="@+id/languageSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginBottom="16dp"
+            android:background="@color/inputBackground"
+            android:padding="16dp"
+            android:popupBackground="@color/surfaceDark" />
 
         <View
             android:layout_width="match_parent"
