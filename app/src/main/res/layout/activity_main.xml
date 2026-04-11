@@ -123,8 +123,7 @@
             <Spinner
                 android:id="@+id/languageSpinner"
                 android:layout_width="wrap_content"
-                android:layout_height="44dp"
-                android:layout_gravity="center_vertical"
+                android:layout_height="match_parent"
                 android:background="@color/inputBackground"
                 android:minWidth="100dp"
                 android:popupBackground="@color/surfaceDark" />
