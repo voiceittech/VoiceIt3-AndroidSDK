@@ -105,7 +105,10 @@ public class VideoEnrollmentView extends AppCompatActivity implements SensorEven
 
         // Text output on mOverlay
         mOverlay = findViewById(R.id.overlay);
-        CameraSource.mOverlay = mOverlay;
+        // Setup toolbar
+        ((android.widget.TextView) findViewById(R.id.toolbarTitle)).setText("Enrolling Video");
+        findViewById(R.id.cancelButton).setOnClickListener(v -> { exitViewWithMessage("voiceit-failure", "User cancelled"); });
+
 
         // Lock orientation
         if (Build.VERSION.SDK_INT >= 18) {

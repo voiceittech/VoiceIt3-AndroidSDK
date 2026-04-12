@@ -86,6 +86,10 @@ public class VoiceEnrollmentView extends AppCompatActivity {
         // Text output on mOverlay
         mOverlay = findViewById(R.id.overlay);
 
+        // Setup toolbar
+        ((android.widget.TextView) findViewById(R.id.toolbarTitle)).setText("Enrolling Voice");
+        findViewById(R.id.cancelButton).setOnClickListener(v -> { exitViewWithMessage("voiceit-failure", "User cancelled"); });
+
         mOverlay.setWaveformColor(this.voiceitThemeColor);
 
         // Lock orientation

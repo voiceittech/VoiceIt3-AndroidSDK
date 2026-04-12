@@ -9,4 +9,6 @@
     view_type:view_type="voice"
     tools:context="com.voiceit.voiceit3.VoiceVerificationView">
 
+    <include layout="@layout/voiceit_toolbar" />
+
 </com.voiceit.voiceit3.RadiusOverlayView>

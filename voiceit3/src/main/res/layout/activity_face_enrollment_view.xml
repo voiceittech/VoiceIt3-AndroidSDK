@@ -9,6 +9,8 @@
     view_type:view_type="face"
     tools:context="com.voiceit.voiceit3.FaceEnrollmentView">
 
+    <include layout="@layout/voiceit_toolbar" />
+
     <com.voiceit.voiceit3.CameraSourcePreview
         android:id="@+id/camera_preview"
         android:layout_width="match_parent"

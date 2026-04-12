@@ -83,7 +83,10 @@ public class VoiceVerificationView extends AppCompatActivity {
 
         // Get overlay
         mOverlay = findViewById(R.id.overlay);
-        mOverlay.setWaveformColor(this.voiceitThemeColor);
+        // Setup toolbar
+        ((android.widget.TextView) findViewById(R.id.toolbarTitle)).setText("Verifying Voice");
+        findViewById(R.id.cancelButton).setOnClickListener(v -> { exitViewWithMessage("voiceit-failure", "User cancelled"); });
+
 
         // Lock orientation
         if (Build.VERSION.SDK_INT >= 18) {
