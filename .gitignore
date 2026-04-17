@@ -10,3 +10,5 @@ patchFile.patch
 .classpath
 .project
 .settings/
+.env
+.env.*
