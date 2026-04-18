@@ -41,7 +41,7 @@ public class VideoEnrollmentView extends AppCompatActivity implements SensorEven
     private Context mContext;
     private RadiusOverlayView mOverlay;
 
-    private VoiceItAPI3 mVoiceIt3;
+    private VoiceItAPI3 mvoiceit3;
     private String mUserId = "";
     private String mContentLanguage = "";
     private String mPhrase = "";
@@ -65,11 +65,11 @@ public class VideoEnrollmentView extends AppCompatActivity implements SensorEven
 
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
-            mVoiceIt3 = new VoiceItAPI3(bundle.getString("apiKey"), bundle.getString("apiToken"));
+            mvoiceit3 = new VoiceItAPI3(bundle.getString("apiKey"), bundle.getString("apiToken"));
             mUserId = bundle.getString("userId");
             mContentLanguage = bundle.getString("contentLanguage");
             mPhrase = bundle.getString("phrase");
-            mVoiceIt3.setNotificationURL(bundle.getString("notificationURL"));
+            mvoiceit3.setNotificationURL(bundle.getString("notificationURL"));
             this.voiceitThemeColor = bundle.getInt("voiceitThemeColor");
             if (this.voiceitThemeColor == 0) {
                 this.voiceitThemeColor = getResources().getColor(R.color.progressCircle);
@@ -119,7 +119,7 @@ public class VideoEnrollmentView extends AppCompatActivity implements SensorEven
                 mOverlay.updateDisplayText("VIDEO_LOOK_INTO_CAM", mPhrase);
                 continueDetecting = true;
             } else {
-                mVoiceIt3.deleteAllEnrollments(mUserId, new Callback() {
+                mvoiceit3.deleteAllEnrollments(mUserId, new Callback() {
                     @Override
                     public void onSuccess(JSONObject response) {
                         mOverlay.updateDisplayText("VIDEO_LOOK_INTO_CAM", mPhrase);
@@ -224,7 +224,7 @@ public class VideoEnrollmentView extends AppCompatActivity implements SensorEven
     }
 
     private void submitEnrollment(final File audioFile, final File audioVideoFile) {
-        mVoiceIt3.createVideoEnrollment(mUserId, mContentLanguage, mPhrase,
+        mvoiceit3.createVideoEnrollment(mUserId, mContentLanguage, mPhrase,
                 audioFile, mPictureFile, new Callback() {
             @Override
             public void onSuccess(JSONObject response) {

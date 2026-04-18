@@ -34,7 +34,7 @@ public class VoiceIdentificationView extends AppCompatActivity {
 
     private int voiceitThemeColor = 0;
 
-    private VoiceItAPI3 mVoiceIt3;
+    private VoiceItAPI3 mvoiceit3;
     private String mGroupId = "";
     private String mContentLanguage = "";
     private String mPhrase = "";
@@ -54,9 +54,9 @@ public class VoiceIdentificationView extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
-            mVoiceIt3 = new VoiceItAPI3(bundle.getString("apiKey"), bundle.getString("apiToken"));
+            mvoiceit3 = new VoiceItAPI3(bundle.getString("apiKey"), bundle.getString("apiToken"));
             mGroupId = bundle.getString("groupId");
-            mVoiceIt3.setNotificationURL(bundle.getString("notificationURL"));
+            mvoiceit3.setNotificationURL(bundle.getString("notificationURL"));
             mContentLanguage = bundle.getString("contentLanguage");
             mPhrase = bundle.getString("phrase");
             this.voiceitThemeColor = bundle.getInt("voiceitThemeColor");
@@ -273,7 +273,7 @@ public class VoiceIdentificationView extends AppCompatActivity {
                 mOverlay.setWaveformMaxAmplitude(1);
                 mOverlay.updateDisplayText("WAIT");
 
-                mVoiceIt3.voiceIdentification(mGroupId, mContentLanguage, mPhrase, audioFile,
+                mvoiceit3.voiceIdentification(mGroupId, mContentLanguage, mPhrase, audioFile,
                         new Callback() {
                             @Override
                             public void onSuccess(JSONObject response) {
@@ -317,7 +317,7 @@ public class VoiceIdentificationView extends AppCompatActivity {
 
     private void identifyUser() {
         mContinueIdentifying = true;
-        mVoiceIt3.getGroup(mGroupId, new Callback() {
+        mvoiceit3.getGroup(mGroupId, new Callback() {
             @Override
             public void onSuccess(JSONObject response) {
                 try {

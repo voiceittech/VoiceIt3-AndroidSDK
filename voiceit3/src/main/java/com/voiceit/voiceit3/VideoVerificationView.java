@@ -41,7 +41,7 @@ public class VideoVerificationView extends AppCompatActivity implements SensorEv
     private Context mContext;
     private RadiusOverlayView mOverlay;
 
-    private VoiceItAPI3 mVoiceIt3;
+    private VoiceItAPI3 mvoiceit3;
     private String mUserId = "";
     private String mContentLanguage = "";
     private String mPhrase = "";
@@ -64,11 +64,11 @@ public class VideoVerificationView extends AppCompatActivity implements SensorEv
 
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
-            mVoiceIt3 = new VoiceItAPI3(bundle.getString("apiKey"), bundle.getString("apiToken"));
+            mvoiceit3 = new VoiceItAPI3(bundle.getString("apiKey"), bundle.getString("apiToken"));
             mUserId = bundle.getString("userId");
             mContentLanguage = bundle.getString("contentLanguage");
             mPhrase = bundle.getString("phrase");
-            mVoiceIt3.setNotificationURL(bundle.getString("notificationURL"));
+            mvoiceit3.setNotificationURL(bundle.getString("notificationURL"));
             this.voiceitThemeColor = bundle.getInt("voiceitThemeColor");
             if (this.voiceitThemeColor == 0) {
                 this.voiceitThemeColor = getResources().getColor(R.color.progressCircle);
@@ -114,7 +114,7 @@ public class VideoVerificationView extends AppCompatActivity implements SensorEv
         if (cameraBinder == null) cameraBinder = new CameraXBinder(this, previewView);
 
         cameraBinder.bindForFace(faceAnalyzer, () -> {
-            mVoiceIt3.getAllVideoEnrollments(mUserId, new Callback() {
+            mvoiceit3.getAllVideoEnrollments(mUserId, new Callback() {
                 @Override
                 public void onSuccess(JSONObject response) {
                     try {
@@ -226,7 +226,7 @@ public class VideoVerificationView extends AppCompatActivity implements SensorEv
     }
 
     private void submitVerification(final File audioFile, final File audioVideoFile) {
-        mVoiceIt3.videoVerification(mUserId, mContentLanguage, mPhrase,
+        mvoiceit3.videoVerification(mUserId, mContentLanguage, mPhrase,
                 audioFile, mPictureFile, new Callback() {
             @Override
             public void onSuccess(JSONObject response) {

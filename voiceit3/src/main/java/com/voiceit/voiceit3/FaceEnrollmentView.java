@@ -44,7 +44,7 @@ public class FaceEnrollmentView extends AppCompatActivity implements SensorEvent
 
     private RadiusOverlayView mOverlay;
 
-    private VoiceItAPI3 mVoiceIt3;
+    private VoiceItAPI3 mvoiceit3;
     private String mUserId = "";
 
     private int mFailedAttempts = 0;
@@ -64,10 +64,10 @@ public class FaceEnrollmentView extends AppCompatActivity implements SensorEvent
 
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
-            mVoiceIt3 = new VoiceItAPI3(bundle.getString("apiKey"), bundle.getString("apiToken"));
+            mvoiceit3 = new VoiceItAPI3(bundle.getString("apiKey"), bundle.getString("apiToken"));
             mContentLanguage = bundle.getString("contentLanguage");
             mUserId = bundle.getString("userId");
-            mVoiceIt3.setNotificationURL(bundle.getString("notificationURL"));
+            mvoiceit3.setNotificationURL(bundle.getString("notificationURL"));
             this.voiceitThemeColor = bundle.getInt("voiceitThemeColor");
             if (this.voiceitThemeColor == 0) {
                 this.voiceitThemeColor = getResources().getColor(R.color.progressCircle);
@@ -113,7 +113,7 @@ public class FaceEnrollmentView extends AppCompatActivity implements SensorEvent
         faceAnalyzer = new MLKitFaceAnalyzer(this::onFacesDetected);
         cameraBinder = new CameraXBinder(this, previewView);
         cameraBinder.bindForFace(faceAnalyzer, () -> {
-            mVoiceIt3.deleteAllEnrollments(mUserId, new Callback() {
+            mvoiceit3.deleteAllEnrollments(mUserId, new Callback() {
                 @Override
                 public void onSuccess(JSONObject response) {
                     mOverlay.updateDisplayText("LOOK_INTO_CAM");
@@ -182,7 +182,7 @@ public class FaceEnrollmentView extends AppCompatActivity implements SensorEvent
         mOverlay.setProgressCircleColor(this.voiceitThemeColor);
         mOverlay.setProgressCircleAngle(270, 359);
 
-        mVoiceIt3.createFaceEnrollmentWithPhoto(mUserId, mPictureFile, new Callback() {
+        mvoiceit3.createFaceEnrollmentWithPhoto(mUserId, mPictureFile, new Callback() {
             @Override
             public void onSuccess(JSONObject response) {
                 try {

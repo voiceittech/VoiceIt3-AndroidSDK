@@ -33,7 +33,7 @@ public class VoiceEnrollmentView extends AppCompatActivity {
     private final Handler timingHandler = new Handler();
     private int voiceitThemeColor = 0;
 
-    private VoiceItAPI3 mVoiceIt3;
+    private VoiceItAPI3 mvoiceit3;
     private String mUserId = "";
     private String mContentLanguage = "";
     private String mPhrase = "";
@@ -54,9 +54,9 @@ public class VoiceEnrollmentView extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
-            mVoiceIt3 = new VoiceItAPI3(bundle.getString("apiKey"), bundle.getString("apiToken"));
+            mvoiceit3 = new VoiceItAPI3(bundle.getString("apiKey"), bundle.getString("apiToken"));
             mUserId = bundle.getString("userId");
-            mVoiceIt3.setNotificationURL(bundle.getString("notificationURL"));
+            mvoiceit3.setNotificationURL(bundle.getString("notificationURL"));
             mContentLanguage = bundle.getString("contentLanguage");
             mPhrase = bundle.getString("phrase");
             this.voiceitThemeColor = bundle.getInt("voiceitThemeColor");
@@ -92,7 +92,7 @@ public class VoiceEnrollmentView extends AppCompatActivity {
 
     private void startEnrollmentFlow() {
         mContinueEnrolling = true;
-        mVoiceIt3.deleteAllEnrollments(mUserId, new Callback() {
+        mvoiceit3.deleteAllEnrollments(mUserId, new Callback() {
             @Override
             public void onSuccess(JSONObject response) {
                 recordVoice();
@@ -280,7 +280,7 @@ public class VoiceEnrollmentView extends AppCompatActivity {
                 mOverlay.setWaveformMaxAmplitude(1);
                 mOverlay.updateDisplayText("WAIT");
 
-                mVoiceIt3.createVoiceEnrollment(mUserId, mContentLanguage, mPhrase, audioFile,
+                mvoiceit3.createVoiceEnrollment(mUserId, mContentLanguage, mPhrase, audioFile,
                         new Callback() {
                             @Override
                             public void onSuccess(JSONObject response) {

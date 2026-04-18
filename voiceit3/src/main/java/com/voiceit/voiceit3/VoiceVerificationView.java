@@ -32,7 +32,7 @@ public class VoiceVerificationView extends AppCompatActivity {
     private MediaRecorder mMediaRecorder = null;
     private final Handler timingHandler = new Handler();
 
-    private VoiceItAPI3 mVoiceIt3;
+    private VoiceItAPI3 mvoiceit3;
     private String mUserId = "";
     private String mContentLanguage = "";
     private String mPhrase = "";
@@ -53,9 +53,9 @@ public class VoiceVerificationView extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
-            mVoiceIt3 = new VoiceItAPI3(bundle.getString("apiKey"), bundle.getString("apiToken"));
+            mvoiceit3 = new VoiceItAPI3(bundle.getString("apiKey"), bundle.getString("apiToken"));
             mUserId = bundle.getString("userId");
-            mVoiceIt3.setNotificationURL(bundle.getString("notificationURL"));
+            mvoiceit3.setNotificationURL(bundle.getString("notificationURL"));
             mContentLanguage = bundle.getString("contentLanguage");
             mPhrase = bundle.getString("phrase");
             this.voiceitThemeColor = bundle.getInt("voiceitThemeColor");
@@ -271,7 +271,7 @@ public class VoiceVerificationView extends AppCompatActivity {
                 mOverlay.setWaveformMaxAmplitude(1);
                 mOverlay.updateDisplayText("WAIT");
 
-                mVoiceIt3.voiceVerification(mUserId, mContentLanguage, mPhrase, audioFile,
+                mvoiceit3.voiceVerification(mUserId, mContentLanguage, mPhrase, audioFile,
                         new Callback() {
                             @Override
                             public void onSuccess(JSONObject response) {
@@ -315,13 +315,13 @@ public class VoiceVerificationView extends AppCompatActivity {
 
     private void verifyUser() {
         mContinueVerifying = true;
-        mVoiceIt3.getAllVoiceEnrollments(mUserId, new Callback() {
+        mvoiceit3.getAllVoiceEnrollments(mUserId, new Callback() {
             @Override
             public void onSuccess(JSONObject response) {
                 try {
                     if (response.getInt("count") < mNeededEnrollments) {
                         // Fall back to checking video enrollments
-                        mVoiceIt3.getAllVideoEnrollments(mUserId, new Callback() {
+                        mvoiceit3.getAllVideoEnrollments(mUserId, new Callback() {
                             @Override
                             public void onSuccess(JSONObject response2) {
                                 try {

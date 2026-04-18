@@ -43,7 +43,7 @@ public class FaceVerificationView extends AppCompatActivity implements SensorEve
     private Context mContext;
     private RadiusOverlayView mOverlay;
 
-    private VoiceItAPI3 mVoiceIt3;
+    private VoiceItAPI3 mvoiceit3;
     private String mUserId = "";
     private int voiceitThemeColor = 0;
 
@@ -69,8 +69,8 @@ public class FaceVerificationView extends AppCompatActivity implements SensorEve
 
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
-            mVoiceIt3 = new VoiceItAPI3(bundle.getString("apiKey"), bundle.getString("apiToken"));
-            mVoiceIt3.setNotificationURL(bundle.getString("notificationURL"));
+            mvoiceit3 = new VoiceItAPI3(bundle.getString("apiKey"), bundle.getString("apiToken"));
+            mvoiceit3.setNotificationURL(bundle.getString("notificationURL"));
             mUserId = bundle.getString("userId");
             mContentLanguage = bundle.getString("contentLanguage");
             this.voiceitThemeColor = bundle.getInt("voiceitThemeColor");
@@ -119,7 +119,7 @@ public class FaceVerificationView extends AppCompatActivity implements SensorEve
         faceAnalyzer = new MLKitFaceAnalyzer(this::onFacesDetected);
         cameraBinder = new CameraXBinder(this, previewView);
         cameraBinder.bindForFace(faceAnalyzer, () -> {
-            mVoiceIt3.getAllFaceEnrollments(mUserId, new Callback() {
+            mvoiceit3.getAllFaceEnrollments(mUserId, new Callback() {
                 @Override
                 public void onSuccess(JSONObject response) {
                     try {
@@ -200,7 +200,7 @@ public class FaceVerificationView extends AppCompatActivity implements SensorEve
         mOverlay.setProgressCircleColor(this.voiceitThemeColor);
         mOverlay.setProgressCircleAngle(270, 359);
 
-        mVoiceIt3.faceVerificationWithPhoto(mUserId, mPictureFile, new Callback() {
+        mvoiceit3.faceVerificationWithPhoto(mUserId, mPictureFile, new Callback() {
             @Override
             public void onSuccess(JSONObject response) {
                 try {
