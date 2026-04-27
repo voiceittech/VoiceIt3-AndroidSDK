@@ -39,6 +39,19 @@ Sign up at [voiceit.io/pricing](https://voiceit.io/pricing) to get your API Key 
 <img src="https://raw.githubusercontent.com/voiceittech/voiceit3-android-sdk/main/Graphics/getcredentials.png" alt="API Key and Token" width="400px" />
 
 ## Requirements
+
+#### Audio Recording
+The SDK records audio at the following specifications for optimal biometric accuracy:
+
+| Setting | Value |
+|---------|-------|
+| Sample Rate | 48 kHz |
+| Bit Depth | 16-bit equivalent |
+| Channels | Mono |
+| Format | AAC 256 kbps (M4A) |
+
+> **Note:** Recordings below 16 kHz sample rate or below 64 kbps bitrate will significantly degrade biometric accuracy and may result in failed enrollments or verifications.
+
 #### SDK Version
 The minimum Android SDK version (API level) should be set to 21 in your build.gradle file:
 ```
