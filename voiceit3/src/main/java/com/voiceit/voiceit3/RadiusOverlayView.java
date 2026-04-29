@@ -237,8 +237,11 @@ class RadiusOverlayView extends LinearLayout {
 
         // text color and style
         textPaint.setColor(getResources().getColor(R.color.instructionalText));
-        // Voice waveform views match iOS regular-weight system font; portrait keeps bold.
-        textPaint.setFakeBoldText(!mDrawWaveform);
+        // iOS storyboard uses fontDescription type="system" (regular weight) at
+        // pointSize=32 for the prompt label on face, video, and voice screens.
+        // Match it on Android: regular weight, system sans-serif.
+        textPaint.setFakeBoldText(false);
+        textPaint.setTypeface(android.graphics.Typeface.create("sans-serif", android.graphics.Typeface.NORMAL));
     }
 
     public void setPicture(byte[] data) {
